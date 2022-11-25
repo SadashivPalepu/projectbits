@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EnquiryForm</title>
+	<style>
+body 
+            {
+                background-color: #cccccc;
+                color: #FFFFFF;
+                font-family:Verdana;
+                font-size:16px;
+            }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td {
+  text-align: left;
+  padding: 8px;
+  color: black;
+}
+
+tr:nth-child(even){background-color: #bbffcc}
+
+th {
+  background-color: #04AA6D;
+  color: white;
+padding: 8px;
+}
+
+#emptable
+{
+padding: 10px;
+width:80%;
+background-color: white;
+border-radius: 5px;
+position: relative;
+left: 100px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #bbffcc;
+  color: black;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+
+
+	</style>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+   	<link rel="stylesheet" href="{{ url_for('static', filename='css/sstyle.css') }}">  
+</head>
+
+<body>
+<div style="width:100%">
+<nav>
+<ul>
+  <li><a  href="/home">Home</a></li>
+  <li><a href="/ehome">Emp</a></li>
+  <li><a href="/shome">Students</a></li>
+  <li><a class="active">Courses</a></li>
+</ul>
+</nav>
+    <div class="formcontainer">
+
+        <form id="signup" class="form" method="POST" action="/addcourse">
+            <h1>Enquiry Form</h1>
+            <div class="form-field">
+                <label for="cname">CourseName:</label>
+                <input type="text" name="cname" id="cname" autocomplete="off">
+                <small></small>
+            </div>
+<div class="form-field">
+                <label for="Duration">Duration:</label>
+                <select name="Duration" id="Duration">
+					<option selected>45-Days</option>
+					<option>30-Days</option>
+					<option>60-Days</option>
+					<option>90-Days</option>
+					<option>180-Days</option>
+					<option>1-Year</option>
+					<option>2-Years</option>
+	</select>
+                <small></small>
+            </div>
+            <div class="form-field">
+                <label for="Fee">Fee:</label>
+                <input type="text" name="Fee" id="Fee" autocomplete="off">
+                <small></small>
+            </div>
+	
+	
+			
+	            <div class="form-field">
+                <input type="submit" value="Insert" class="btn">
+            </div>
+        </form>
+    </div>
+</div>
+<script src="{{ url_for('static', filename='js/courseapp.js')}}"></script>	
+
+</body>
+</html>

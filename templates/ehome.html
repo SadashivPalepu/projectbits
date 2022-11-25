@@ -1,0 +1,126 @@
+<html>
+	<head>
+<style>
+.button {
+  background-color: #008CBA; /* blue */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  float:right;
+}
+            body 
+            {
+                background-color: #cccccc;
+                color: #FFFFFF;
+                font-family:Verdana;
+                font-size:16px;
+            }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td {
+  text-align: left;
+  padding: 8px;
+  
+}
+
+tr
+{
+border-bottom: 1pt solid #cccccc;
+color:black;
+}
+tr:hover {background-color: #008CFA; color:white;}
+th {
+  background-color: #008CBA;
+  color: white;
+padding: 8px;
+  text-align: left;
+}
+
+#emptable
+{
+padding: 10px;
+width:80%;
+background-color: white;
+border-radius: 5px;
+position: relative;
+left: 100px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #cccccc;
+  color: black;
+}
+
+.active {
+  background-color: #008CBA;
+}
+
+        </style>
+	</head>
+<body>
+<H2>EmployeeHome</H2>
+<div>
+<nav>
+<ul>
+  <li><a  href="/home">Home</a></li>
+  <li><a class="active">Emp</a></li>
+  <li><a href="/shome">Students</a></li>
+  <li><a href="/chome">Courses</a></li>
+</ul>
+</nav>
+<div id="emptable">
+<h3><a href="/einsert" class="button">Insert</a></h3>
+{% if objects %}
+  <table id='result' class='display'>
+    <thead>
+      <tr>
+      {% for header in headers %}
+        <th>{{header}}</th>
+      {% endfor %}
+      </tr>
+    </thead>
+
+    <tbody>
+    {% for object in objects %} 
+      <tr>
+    {% for  val in object %}
+        <td>{{val}}</td>
+      {% endfor %}
+      </tr>
+    {% endfor %}        
+    </tbody>
+  </table>
+{% endif %}
+</div>
+</div>
+</body>
+</html>
